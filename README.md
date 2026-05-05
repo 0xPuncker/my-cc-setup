@@ -2,7 +2,7 @@
 
 ![Claude Code Template](https://img.shields.io/badge/Claude_Code_Template-v1.0.0-blue?style=flat-square)
 ![License](https://img.shields.io/badge/License-Apache_2.0-green?style=flat-square)
-![Last Updated](https://img.shields.io/badge/Updated-2026--05--05-yellow?style=flat-square)
+![Last Updated](https://img.shields.io/badge/Updated-2025-05-05-yellow?style=flat-square)
 ![Maintained](https://img.shields.io/badge/Maintained-@0xPuncker-brightgreen?style=flat-square)
 
 Personal template repository for consistent Claude Code configuration across projects. Includes security controls, permission management, and development guidelines.
@@ -192,60 +192,52 @@ Same steps, but be careful not to overwrite existing configuration:
 
 Edit CLAUDE.md to include your project's commands:
 
-\`\`\`markdown
-
+```markdown
 ## Development Commands
 
 ### Building
-
-\`\`\`bash
-npm run build # Node.js
-cargo build # Rust
-go build # Go
-\`\`\`
+```bash
+npm run build        # Node.js
+cargo build          # Rust
+go build             # Go
+```
 
 ### Testing
-
-\`\`\`bash
-npm test # Node.js
-cargo test # Rust
-go test ./... # Go
-\`\`\`
+```bash
+npm test             # Node.js
+cargo test           # Rust
+go test ./...        # Go
+```
 
 ### Linting
-
-\`\`\`bash
-npm run lint # Node.js
-cargo clippy # Rust
-golangci-lint run # Go
-\`\`\`
-\`\`\`
+```bash
+npm run lint         # Node.js
+cargo clippy         # Rust
+golangci-lint run    # Go
+```
+```
 
 ### Add Architecture Documentation
 
 For complex projects, add to CLAUDE.md:
 
-\`\`\`markdown
-
+```markdown
 ## Architecture
 
 ### Directory Structure
-
-\`\`\`
+```
 src/
-├── core/ # Core business logic
+├── core/           # Core business logic
 ├── api/ # API handlers and routing
 ├── models/ # Data models and schemas
-└── utils/ # Shared utilities
-\`\`\`
+└── utils/          # Shared utilities
+```
 
 ### Key Patterns
-
 - **Fat Models, Thin Views**: Business logic in models
 - **Dependency Injection**: Used throughout
 - **Repository Pattern**: Data access abstraction
-  \`\`\`
-  \`\`\`
+```
 
 ## 🎓 Learn More
 
@@ -290,4 +282,4 @@ This is a personal template. Feel free to fork and customize for your own workfl
 
 ---
 
-**Version:** 1.0.0 | **Last Updated:** 2026-05-05 | **Maintained:** [0xPuncker](https://github.com/0xPuncker)
+**Version:** 1.0.0 | **Last Updated:** 2025-05-05 | **Maintained:** [0xPuncker](https://github.com/0xPuncker)
