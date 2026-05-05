@@ -216,6 +216,4 @@ cp D:/Dev/my-cc-setup/.gitignore.template /path/to/new/project/.gitignore
 
 ---
 
-**Last Updated**: 2026-05-05
-**Template Version**: 1.0.0
-**Global Settings**: Safe mode (default)
+**Version:** 1.0.0 | **Last Updated:** 2025-05-05 | **Maintained:** [0xPuncker](https://github.com/0xPuncker)

@@ -252,4 +252,4 @@ This is a personal template. Feel free to fork and customize for your own workfl
 
 ---
 
-**Version:** 1.0.0 | **Last Updated:** 2025-05-05 | **Maintained:** @0xPuncker
+**Version:** 1.0.0 | **Last Updated:** 2025-05-05 | **Maintained:** [0xPuncker](https://github.com/0xPuncker)
