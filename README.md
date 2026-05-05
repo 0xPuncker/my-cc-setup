@@ -192,20 +192,17 @@ Same steps, but be careful not to overwrite existing configuration:
 
 Edit CLAUDE.md to include your project's commands:
 
-````markdown
+```markdown
 ## Development Commands
 
 ### Building
-
 ```bash
 npm run build        # Node.js
 cargo build          # Rust
 go build             # Go
 ```
-````
 
 ### Testing
-
 ```bash
 npm test             # Node.js
 cargo test           # Rust
@@ -213,37 +210,35 @@ go test ./...        # Go
 ```
 
 ### Linting
-
 ```bash
 npm run lint         # Node.js
 cargo clippy         # Rust
 golangci-lint run    # Go
+```
 ```
 
 ### Add Architecture Documentation
 
 For complex projects, add to CLAUDE.md:
 
-````markdown
+```markdown
 ## Architecture
 
 ### Directory Structure
-
-```bash
+```
 src/
 ├── core/           # Core business logic
-├── api/ # API handlers and routing
-├── models/ # Data models and schemas
+├── api/            # API handlers and routing
+├── models/         # Data models and schemas
 └── utils/          # Shared utilities
 ```
-````
 
-```bash
 ### Key Patterns
 - **Fat Models, Thin Views**: Business logic in models
 - **Dependency Injection**: Used throughout
 - **Repository Pattern**: Data access abstraction
 ```
+
 
 ## 🎓 Learn More
 
