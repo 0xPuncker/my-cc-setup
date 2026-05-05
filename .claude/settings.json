@@ -1,0 +1,15 @@
+{
+  "defaultMode": "auto",
+  "permissionMode": "default",
+  "permissions": {
+    "allowWriteWithoutRead": false,
+    "alwaysAllowReadOnly": true,
+    "alwaysAllowShell": false
+  },
+  "hooks": {
+    "preCommand": "",
+    "postCommand": ""
+  },
+  "hiddenCommands": [],
+  "disabledCommands": []
+}

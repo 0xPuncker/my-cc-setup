@@ -1,0 +1,56 @@
+# Environment variables
+.env
+.env.local
+.env.*.local
+.env.development
+.env.production
+.env.test
+
+# Development variables
+.dev.vars
+.dev.vars.local
+
+# Secrets and credentials
+secrets/
+credentials/
+*.pem
+*.key
+*.cert
+*.crt
+
+# Cloud provider configs
+.aws/
+.aws/
+.gcp/
+.azure/
+
+# SSH keys and config
+.ssh/
+.ssh/
+
+# Database credentials
+config/database.yml
+config/credentials.json
+config/secrets.yml
+
+# Package manager credentials
+.npmrc
+.pypirc
+.yarnrc.yml
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Build outputs
+dist/
+build/
+*.log
