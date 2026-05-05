@@ -32,7 +32,7 @@ cp -r .claude /path/to/project/
 cp .gitignore.template /path/to/project/.gitignore
 ```
 
-📖 **Documentation:** See SETUP.md for detailed instructions
+📖 **Documentation:** See docs/SETUP.md for detailed instructions
 
 🛡️ **Security:** Default permission mode protects sensitive files and requires approval for destructive operations
 

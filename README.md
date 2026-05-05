@@ -20,7 +20,7 @@ Personal template repository for consistent Claude Code configuration across pro
 
 3. Test it: Ask Claude Code to do a simple task
 
-**Detailed instructions:** See [SETUP.md](SETUP.md) | **Checklist:** See [CHECKLIST.md](CHECKLIST.md)
+**Detailed instructions:** See [docs/SETUP.md](docs/SETUP.md) | **Checklist:** See [docs/CHECKLIST.md](docs/CHECKLIST.md)
 
 ## 📋 What This Provides
 
@@ -60,8 +60,12 @@ my-cc-setup/
 ├── .claude/
 │   └── settings.json         # Permission controls and modes
 ├── .gitignore.template       # Template .gitignore with security rules
-├── SETUP.md                  # Detailed setup instructions
-├── CHECKLIST.md              # New project checklist
+├── docs/                     # Documentation
+│   ├── SETUP.md              # Detailed setup instructions
+│   ├── CHECKLIST.md          # New project checklist
+│   ├── GLOBAL_SETUP.md       # Global configuration guide
+│   ├── PROJECT_OVERRIDE.md   # Project-specific override guide
+│   └── GITHUB_ABOUT.md       # GitHub repository setup
 ├── examples/                 # Tech stack examples
 │   ├── CLAUDE.nodejs.md      # Node.js/Express/TypeScript example
 │   ├── CLAUDE.python.md      # Django/Python example
@@ -118,8 +122,11 @@ my-cc-setup/
 
 | File | Purpose |
 |------|---------|
-| [SETUP.md](SETUP.md) | Detailed setup instructions with troubleshooting |
-| [CHECKLIST.md](CHECKLIST.md) | Step-by-step checklist for new projects |
+| [docs/SETUP.md](docs/SETUP.md) | Detailed setup instructions with troubleshooting |
+| [docs/CHECKLIST.md](docs/CHECKLIST.md) | Step-by-step checklist for new projects |
+| [docs/GLOBAL_SETUP.md](docs/GLOBAL_SETUP.md) | Global configuration guide |
+| [docs/PROJECT_OVERRIDE.md](docs/PROJECT_OVERRIDE.md) | Project-specific override guide |
+| [docs/GITHUB_ABOUT.md](docs/GITHUB_ABOUT.md) | GitHub repository setup |
 | [CLAUDE.md](CLAUDE.md) | Full development guidelines and conventions |
 | [examples/](examples/) | Tech stack-specific templates |
 

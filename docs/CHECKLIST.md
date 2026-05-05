@@ -165,7 +165,7 @@ You'll know the setup is complete when:
 
 ## 📞 Need Help?
 
-- Review [SETUP.md](SETUP.md) for detailed instructions
+- Review [docs/SETUP.md](docs/SETUP.md) for detailed instructions
 - Check [examples/](examples/) for tech stack-specific templates
 - Read [CLAUDE.md](CLAUDE.md) for full guidelines
 - Consult Claude Code docs: https://claude.ai/code
