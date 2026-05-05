@@ -1,5 +1,10 @@
 # Claude Code Setup Template
 
+![Claude Code Template](https://img.shields.io/badge/Claude_Code_Template-v1.0.0-blue?style=flat-square)
+![License](https://img.shields.io/badge/License-Apache_2.0-green?style=flat-square)
+![Last Updated](https://img.shields.io/badge/Updated-2025--05--05-yellow?style=flat-square)
+![Maintained](https://img.shields.io/badge/Maintained-@0xPuncker-brightgreen?style=flat-square)
+
 Personal template repository for consistent Claude Code configuration across projects. Includes security controls, permission management, and development guidelines.
 
 ## 🚀 Quick Start
