@@ -9,7 +9,19 @@ Personal template repository for consistent Claude Code configuration across pro
 
 ## 🚀 Quick Start
 
-**5-minute setup for new projects:**
+**Option 1: Automated Setup (Recommended)**
+
+Run the setup script from your new project directory:
+
+```bash
+# From the template repository
+./setup.sh /path/to/project "Project Name" "TechStack"
+
+# Or with PowerShell (Windows)
+.\setup.ps1 -ProjectPath "C:\path\to\project" -ProjectName "My API Project" -TechStack "Node.js, Express, TypeScript"
+```
+
+**Option 2: Manual Setup (5 minutes)**
 
 1. Copy template files to your project:
 
@@ -69,6 +81,8 @@ my-cc-setup/
 ├── .claude/
 │   └── settings.json         # Permission controls and modes
 ├── .gitignore.template       # Template .gitignore with security rules
+├── setup.sh                  # Unix/Linux/macOS setup script
+├── setup.ps1                 # Windows PowerShell setup script
 ├── docs/                     # Documentation
 │   ├── SETUP.md              # Detailed setup instructions
 │   ├── CHECKLIST.md          # New project checklist
@@ -148,43 +162,54 @@ my-cc-setup/
 
 ## 🛠 How to Use This Template
 
-### For New Projects
+### Automated Setup (Recommended)
 
-1. **Copy template files**:
+#### Windows (PowerShell)
 
-   ```bash
-   # Copy core configuration
-   cp CLAUDE.md /path/to/project/
-   cp -r .claude /path/to/project/
-   cp .gitignore.template /path/to/project/.gitignore
-   ```
+```powershell
+# Basic setup
+.\setup.ps1 -ProjectPath "C:\Dev\my-new-project"
 
-2. **Customize CLAUDE.md**:
-   - Edit "Project Purpose" section
-   - Add tech stack
-   - Add development commands (build, test, lint)
-   - Add architecture if complex
+# With project details
+.\setup.ps1 -ProjectPath "C:\Dev\my-api" -ProjectName "My REST API" -TechStack "Node.js, Express, TypeScript"
 
-3. **Verify settings**:
+# Force overwrite existing files
+.\setup.ps1 -ProjectPath "C:\Dev\my-api" -Force
+```
 
-   ```bash
-   # Check .claude/settings.json
-   cat .claude/settings.json
-   # Should show: "defaultMode": "auto", "permissionMode": "default"
-   ```
+#### Unix/Linux/macOS (Bash)
 
-4. **Test it**:
-   - Ask Claude to read a file (no prompt)
-   - Ask Claude to edit a file (prompts for approval)
-   - Ask Claude to run a command (prompts for approval)
+```bash
+# Basic setup
+./setup.sh /path/to/project
 
-### For Existing Projects
+# With project details
+./setup.sh /path/to/project "My REST API" "Node.js, Express, TypeScript"
 
-Same steps, but be careful not to overwrite existing configuration:
+# Force overwrite existing files
+./setup.sh /path/to/project "My REST API" "Node.js, Express, TypeScript" --force
+```
 
-- Review CLAUDE.md content before copying
-- Merge settings with existing `.claude/settings.json`
-- Add new rules to existing `.gitignore`
+### Script Parameters
+
+- **`ProjectPath`**: Target project directory (default: current directory)
+- **`ProjectName`**: Your project name (replaces placeholders in CLAUDE.md)
+- **`TechStack`**: Technologies used (replaces placeholders in CLAUDE.md)
+- **`-SkipGit`**: Skip git initialization
+- **`-Force/--force`**: Overwrite existing files without prompting
+
+### Manual Setup
+
+For more control, copy files manually:
+
+```bash
+# Copy core configuration
+cp CLAUDE.md /path/to/project/
+cp -r .claude /path/to/project/
+cp .gitignore.template /path/to/project/.gitignore
+```
+
+Then edit `CLAUDE.md` to customize for your project.
 
 ## 🎨 Customization Examples
 
