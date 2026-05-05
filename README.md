@@ -2,7 +2,7 @@
 
 ![Claude Code Template](https://img.shields.io/badge/Claude_Code_Template-v1.0.0-blue?style=flat-square)
 ![License](https://img.shields.io/badge/License-Apache_2.0-green?style=flat-square)
-![Last Updated](https://img.shields.io/badge/Updated-2025--05--05-yellow?style=flat-square)
+![Last Updated](https://img.shields.io/badge/Updated-2026--05--05-yellow?style=flat-square)
 ![Maintained](https://img.shields.io/badge/Maintained-@0xPuncker-brightgreen?style=flat-square)
 
 Personal template repository for consistent Claude Code configuration across projects. Includes security controls, permission management, and development guidelines.
@@ -12,6 +12,7 @@ Personal template repository for consistent Claude Code configuration across pro
 **5-minute setup for new projects:**
 
 1. Copy template files to your project:
+
    ```bash
    cp CLAUDE.md /path/to/project/
    cp -r .claude /path/to/project/
@@ -30,17 +31,20 @@ Personal template repository for consistent Claude Code configuration across pro
 ## 📋 What This Provides
 
 ### 🔒 Security by Default
+
 - **Protected files**: `.env*`, secrets, keys cannot be read/written
 - **Approval prompts**: Asks before destructive operations (edit, delete, git push)
 - **File access restrictions**: Automatic protection for sensitive patterns
 
 ### 📝 Consistent Conventions
+
 - **Semantic Versioning**: MAJOR.MINOR.PATCH versioning
-- **Git Flow**: Branching strategy (main, develop, feature/*)
+- **Git Flow**: Branching strategy (main, develop, feature/\*)
 - **Conventional Commits**: Standardized commit message format
 - **Single-author commits**: No CoAuthored commits
 
 ### 🎯 Quality Guidelines
+
 Based on [Andrej Karpathy's LLM coding principles](https://github.com/karpathy/llm.internals):
 
 1. **Think Before Coding** - State assumptions, surface tradeoffs
@@ -50,12 +54,12 @@ Based on [Andrej Karpathy's LLM coding principles](https://github.com/karpathy/l
 
 ### ⚙️ Permission Modes
 
-| Mode | Behavior | Best For |
-|------|----------|----------|
-| `default` | Prompts for writes/shell, no prompts for reads | **Most projects** (recommended) |
-| `acceptEdits` | Auto-approves file edits, prompts for shell | High-volume editing, trusted projects |
-| `auto` | Auto-approves most operations | Trusted projects, rapid prototyping |
-| `bypassPermissions` | No prompts | **Use with extreme caution** |
+| Mode                | Behavior                                       | Best For                              |
+| ------------------- | ---------------------------------------------- | ------------------------------------- |
+| `default`           | Prompts for writes/shell, no prompts for reads | **Most projects** (recommended)       |
+| `acceptEdits`       | Auto-approves file edits, prompts for shell    | High-volume editing, trusted projects |
+| `auto`              | Auto-approves most operations                  | Trusted projects, rapid prototyping   |
+| `bypassPermissions` | No prompts                                     | **Use with extreme caution**          |
 
 ## 📁 Repository Structure
 
@@ -81,22 +85,26 @@ my-cc-setup/
 ## 🎯 Core Guidelines
 
 ### Think Before Coding
+
 - State assumptions explicitly
 - Present multiple interpretations
 - Push back when simpler approaches exist
 - Stop when confused and ask questions
 
 ### Simplicity First
+
 - No features beyond what was asked
 - No abstractions for single-use code
 - If 200 lines could be 50, rewrite it
 
 ### Surgical Changes
+
 - Touch only what you must
 - Don't improve unrelated code
 - Clean up only your own mess
 
 ### Goal-Driven Execution
+
 - Define success criteria
 - Loop until verified
 - Write tests that reproduce bugs
@@ -104,12 +112,14 @@ my-cc-setup/
 ## 🔐 Permission Examples
 
 ### ✅ No Prompt Needed
+
 - Reading source code
 - Searching with Grep/Glob
 - Git status/log
 - Read-only file operations
 
 ### ⚠️ Approval Required
+
 - Editing files (Edit/Write tools)
 - Running shell commands
 - Git commits/pushes/merges
@@ -117,6 +127,7 @@ my-cc-setup/
 - File deletion operations
 
 ### 🛡️ Never Allowed
+
 - Reading `.env` files
 - Writing to `secrets/` directories
 - Accessing private keys (`*.pem`, `*.key`)
@@ -125,21 +136,22 @@ my-cc-setup/
 
 ## 📖 Documentation
 
-| File | Purpose |
-|------|---------|
-| [docs/SETUP.md](docs/SETUP.md) | Detailed setup instructions with troubleshooting |
-| [docs/CHECKLIST.md](docs/CHECKLIST.md) | Step-by-step checklist for new projects |
-| [docs/GLOBAL_SETUP.md](docs/GLOBAL_SETUP.md) | Global configuration guide |
-| [docs/PROJECT_OVERRIDE.md](docs/PROJECT_OVERRIDE.md) | Project-specific override guide |
-| [docs/GITHUB_ABOUT.md](docs/GITHUB_ABOUT.md) | GitHub repository setup |
-| [CLAUDE.md](CLAUDE.md) | Full development guidelines and conventions |
-| [examples/](examples/) | Tech stack-specific templates |
+| File                                                 | Purpose                                          |
+| ---------------------------------------------------- | ------------------------------------------------ |
+| [docs/SETUP.md](docs/SETUP.md)                       | Detailed setup instructions with troubleshooting |
+| [docs/CHECKLIST.md](docs/CHECKLIST.md)               | Step-by-step checklist for new projects          |
+| [docs/GLOBAL_SETUP.md](docs/GLOBAL_SETUP.md)         | Global configuration guide                       |
+| [docs/PROJECT_OVERRIDE.md](docs/PROJECT_OVERRIDE.md) | Project-specific override guide                  |
+| [docs/GITHUB_ABOUT.md](docs/GITHUB_ABOUT.md)         | GitHub repository setup                          |
+| [CLAUDE.md](CLAUDE.md)                               | Full development guidelines and conventions      |
+| [examples/](examples/)                               | Tech stack-specific templates                    |
 
 ## 🛠 How to Use This Template
 
 ### For New Projects
 
 1. **Copy template files**:
+
    ```bash
    # Copy core configuration
    cp CLAUDE.md /path/to/project/
@@ -154,6 +166,7 @@ my-cc-setup/
    - Add architecture if complex
 
 3. **Verify settings**:
+
    ```bash
    # Check .claude/settings.json
    cat .claude/settings.json
@@ -168,6 +181,7 @@ my-cc-setup/
 ### For Existing Projects
 
 Same steps, but be careful not to overwrite existing configuration:
+
 - Review CLAUDE.md content before copying
 - Merge settings with existing `.claude/settings.json`
 - Add new rules to existing `.gitignore`
@@ -179,27 +193,31 @@ Same steps, but be careful not to overwrite existing configuration:
 Edit CLAUDE.md to include your project's commands:
 
 \`\`\`markdown
+
 ## Development Commands
 
 ### Building
+
 \`\`\`bash
-npm run build        # Node.js
-cargo build          # Rust
-go build             # Go
+npm run build # Node.js
+cargo build # Rust
+go build # Go
 \`\`\`
 
 ### Testing
+
 \`\`\`bash
-npm test             # Node.js
-cargo test           # Rust
-go test ./...        # Go
+npm test # Node.js
+cargo test # Rust
+go test ./... # Go
 \`\`\`
 
 ### Linting
+
 \`\`\`bash
-npm run lint         # Node.js
-cargo clippy         # Rust
-golangci-lint run    # Go
+npm run lint # Node.js
+cargo clippy # Rust
+golangci-lint run # Go
 \`\`\`
 \`\`\`
 
@@ -208,33 +226,38 @@ golangci-lint run    # Go
 For complex projects, add to CLAUDE.md:
 
 \`\`\`markdown
+
 ## Architecture
 
 ### Directory Structure
+
 \`\`\`
 src/
-├── core/           # Core business logic
-├── api/            # API handlers and routing
-├── models/         # Data models and schemas
-└── utils/          # Shared utilities
+├── core/ # Core business logic
+├── api/ # API handlers and routing
+├── models/ # Data models and schemas
+└── utils/ # Shared utilities
 \`\`\`
 
 ### Key Patterns
+
 - **Fat Models, Thin Views**: Business logic in models
 - **Dependency Injection**: Used throughout
 - **Repository Pattern**: Data access abstraction
-\`\`\`
-\`\`\`
+  \`\`\`
+  \`\`\`
 
 ## 🎓 Learn More
 
 ### Key Concepts
+
 - [Semantic Versioning](https://semver.org/)
 - [Git Flow](https://danielkummer.github.io/git-flow-cheatsheet/)
 - [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
 - [Karpathy's LLM Observations](https://github.com/karpathy/llm.internals)
 
 ### Claude Code Resources
+
 - [Claude Code Documentation](https://claude.ai/code)
 - [Claude Code GitHub](https://github.com/anthropics/claude-code)
 - [Claude Code Issues](https://github.com/anthropics/claude-code/issues)
@@ -242,15 +265,18 @@ src/
 ## 🔍 Troubleshooting
 
 ### "Too many prompts"
+
 - Change permission mode to `acceptEdits` in `.claude/settings.json`
 - Auto-approves file edits, still prompts for shell commands
 
 ### "Claude can't read my config"
+
 - Check if file is in protected list (CLAUDE.md Security section)
 - Move non-sensitive config to unprotected location
 - Update CLAUDE.md security rules if needed
 
 ### "Not enough prompts"
+
 - Set permission mode to `default`
 - Remove `alwaysAllowShell: true` if present
 
@@ -264,4 +290,4 @@ This is a personal template. Feel free to fork and customize for your own workfl
 
 ---
 
-**Version:** 1.0.0 | **Last Updated:** 2025-05-05 | **Maintained:** [0xPuncker](https://github.com/0xPuncker)
+**Version:** 1.0.0 | **Last Updated:** 2026-05-05 | **Maintained:** [0xPuncker](https://github.com/0xPuncker)
