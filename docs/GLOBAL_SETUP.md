@@ -29,20 +29,20 @@ Updated `~/.claude/CLAUDE.md` with:
 **Backup created**: `~/.claude/settings.json.backup`
 
 **Changes made**:
-\`\`\`json
+```json
 // BEFORE (Unsafe)
 "permissions": {
-"defaultMode": "bypassPermissions" // No prompts!
+  "defaultMode": "bypassPermissions"  // No prompts!
 }
 
 // AFTER (Safe)
 "permissions": {
-"defaultMode": "default", // Prompts for writes/shell
-"allowWriteWithoutRead": false, // Must read before write
-"alwaysAllowReadOnly": true, // No prompts for reading
-"alwaysAllowShell": false // Prompts for shell commands
+  "defaultMode": "default",           // Prompts for writes/shell
+  "allowWriteWithoutRead": false,     // Must read before write
+  "alwaysAllowReadOnly": true,        // No prompts for reading
+  "alwaysAllowShell": false           // Prompts for shell commands
 }
-\`\`\`
+```
 
 ### ~/.claude/CLAUDE.md
 
@@ -83,57 +83,42 @@ Updated `~/.claude/CLAUDE.md` with:
 
 ### Test 1: Read File (Should Work)
 
-\`\`\`bash
-
+```bash
 # Ask Claude: "Read the package.json file"
-
 # Expected: Works immediately, no prompt
-
-\`\`\`
+```
 
 ### Test 2: Edit File (Should Prompt)
 
-\`\`\`bash
-
+```bash
 # Ask Claude: "Add a comment to the top of index.js"
-
 # Expected: Prompts for approval
-
-\`\`\`
+```
 
 ### Test 3: Run Command (Should Prompt)
 
-\`\`\`bash
-
+```bash
 # Ask Claude: "Run npm install"
-
 # Expected: Prompts for approval
-
-\`\`\`
+```
 
 ### Test 4: Read .env (Should Be Blocked)
 
-\`\`\`bash
-
+```bash
 # Ask Claude: "Read the .env file"
-
 # Expected: Blocked, Claude asks you to provide the value
-
-\`\`\`
+```
 
 ## Reverting Changes
 
 If you want to revert to the previous settings:
 
-\`\`\`bash
-
+```bash
 # Restore backup settings
-
 cp ~/.claude/settings.json.backup ~/.claude/settings.json
 
 # Or manually edit permissions to "bypassPermissions"
-
-\`\`\`
+```
 
 ## Customizing Global Settings
 
@@ -141,56 +126,51 @@ cp ~/.claude/settings.json.backup ~/.claude/settings.json
 
 If you find prompts too frequent:
 
-\`\`\`json
+```json
 {
-"permissions": {
-"defaultMode": "acceptEdits", // Auto-approve file edits
-"alwaysAllowReadOnly": true,
-"alwaysAllowShell": false // Still prompt for shell
+  "permissions": {
+    "defaultMode": "acceptEdits",  // Auto-approve file edits
+    "alwaysAllowReadOnly": true,
+    "alwaysAllowShell": false       // Still prompt for shell
+  }
 }
-}
-\`\`\`
+```
 
 ### For More Restrictive (Safer)
 
 If you want maximum security:
 
-\`\`\`json
+```json
 {
-"permissions": {
-"defaultMode": "default", // Keep as-is
-"alwaysAllowReadOnly": false, // Prompt for reads too
-"alwaysAllowShell": false
+  "permissions": {
+    "defaultMode": "default",           // Keep as-is
+    "alwaysAllowReadOnly": false,        // Prompt for reads too
+    "alwaysAllowShell": false
+  }
 }
-}
-\`\`\`
+```
 
 ## Project-Specific Overrides
 
 Each project can have its own `.claude/settings.json` to override global settings:
 
-\`\`\`bash
-
+```bash
 # In a specific project directory
-
 mkdir .claude
 echo '{"permissions":{"defaultMode":"acceptEdits"}}' > .claude/settings.json
-\`\`\`
+```
 
 ## Updating Settings
 
 To update global settings in the future:
 
-\`\`\`bash
-
+```bash
 # Edit global settings directly
-
 notepad ~/.claude/settings.json
 
 # Or use the template
-
 cp D:/Dev/my-cc-setup/.claude/settings.json ~/.claude/settings.json
-\`\`\`
+```
 
 ## Troubleshooting
 
@@ -248,11 +228,11 @@ The new `default` mode is **much safer** while still being efficient for develop
 Your Claude Code template is at: `D:/Dev/my-cc-setup`
 
 Use it for new projects:
-\`\`\`bash
+```bash
 cp D:/Dev/my-cc-setup/CLAUDE.md /path/to/new/project/
 cp -r D:/Dev/my-cc-setup/.claude /path/to/new project/
 cp D:/Dev/my-cc-setup/.gitignore.template /path/to/new/project/.gitignore
-\`\`\`
+```
 
 ---
 

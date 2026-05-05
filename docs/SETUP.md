@@ -69,63 +69,64 @@ Check that `.claude/settings.json` has the right permission mode:
 
 Edit CLAUDE.md to include your project's commands:
 
-\`\`\`markdown
+```markdown
 ## Development Commands
 
 ### Building
-\`\`\`bash
+```bash
 npm run build
 # or
 cargo build
 # or
 go build
-\`\`\`
+```
 
 ### Testing
-\`\`\`bash
+```bash
 npm test
 # or
 cargo test
 # or
 go test ./...
-\`\`\`
+```
 
 ### Linting
-\`\`\`bash
+```bash
 npm run lint
 # or
 cargo clippy
-\`\`\`
+```
+```
 
 ### Running the Application
-\`\`\`bash
+```bash
 npm start
 # or
 cargo run
-\`\`\`
-\`\`\`
+```
+```
 
 ### Add Architecture Documentation
 
 For complex projects, add to CLAUDE.md:
 
-\`\`\`markdown
+```markdown
 ## Architecture
 
 ### Directory Structure
-\`\`\`
+```
 src/
 ├── core/           # Core business logic
 ├── api/            # API handlers and routing
 ├── models/         # Data models and schemas
 └── utils/          # Shared utilities
-\`\`\`
+```
 
 ### Key Patterns
 - **Dependency Injection**: Used in src/core/
 - **Repository Pattern**: Data access in src/models/
 - **Middleware Stack**: Request processing in src/api/
-\`\`\`
+```
 
 ## Permission Levels
 
@@ -183,7 +184,7 @@ After setting up a new project, verify:
 
 Add these to protect sensitive files:
 
-\`\`\`gitignore
+```gitignore
 # Environment variables
 .env
 .env.local
@@ -199,7 +200,7 @@ credentials/
 .vscode/
 .idea/
 *.swp
-\`\`\`
+```
 
 ## Troubleshooting
 
