@@ -1,6 +1,6 @@
 ---
 name: spec
-description: Use at the start of a new feature or app idea, before any code is written or planned in detail — interviews the user one question at a time until the goal, requirements, constraints, and definition of "done" are fully understood, then writes the result to specs/<name>.md for build and review to consume.
+description: Use at the start of a new feature or app idea, before any code is written or planned in detail — interviews the user in batched AskUserQuestion prompts (up to 4 questions per call) until the goal, requirements, constraints, and definition of "done" are fully understood, then writes the result to specs/<name>.md for build and review to consume.
 ---
 
 # /spec
@@ -14,8 +14,8 @@ Turns a vague idea into a written specification other skills can build and verif
 
 ## What to do
 
-1. Interview the user about the feature or app they want to build. Ask **one specific question at a time** — do not batch multiple questions, do not move to the next question until the current answer is understood.
-2. Keep asking until you fully understand:
+1. Interview the user about the feature or app they want to build using the `AskUserQuestion` tool. Group up to 4 related, non-dependent questions into a **single** `AskUserQuestion` call so they render together in one place and the user can move between them (Tab / `<` / `>`) instead of getting a new prompt per question. Only split questions across separate calls when a later question's options genuinely depend on an earlier answer in that same batch — otherwise batch them.
+2. Keep asking (in batches) until you fully understand:
    - The objective (what problem this solves, for whom)
    - The exact requirements (what must be true when it's done)
    - The constraints (tech stack, performance, compatibility, and anything it must NOT do)
@@ -30,6 +30,7 @@ The spec file must include:
 - **Definition of done** — concrete, verifiable criteria (this is what `review` will check against)
 
 ## Common mistakes
-- Asking several questions in one message — slows convergence and lets ambiguity slide through unnoticed. One question at a time.
+- Firing off separate `AskUserQuestion` calls one at a time when the questions don't depend on each other — batch up to 4 per call instead so the user answers them together in one place.
+- Batching questions whose options actually depend on a prior answer — split those into a follow-up call once the dependency is resolved.
 - Writing the spec before constraints and "done" criteria are pinned down.
 - Starting to implement or design during the interview — that belongs to `build`.
