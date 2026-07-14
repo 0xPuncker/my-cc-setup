@@ -13,6 +13,8 @@ Reads a specification written by `spec` and implements exactly what it describes
 /build                   # if only one spec exists; otherwise ask which one
 ```
 
+`build` is invoked either directly by the user, or automatically by `review` as part of its autonomous loop — in the latter case, just do the work and report back; don't ask the user "should I proceed with this fix?" (that's not the same as asking when the spec is genuinely ambiguous, which is still fine).
+
 ## What to do
 
 1. Read `specs/<name>.md` in full before writing any code.

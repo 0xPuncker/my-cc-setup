@@ -73,39 +73,29 @@ Implemented:
 
 Note the honest checklist - it flags the one requirement it didn't fully meet, rather than silently glossing over it.
 
-## 4. Run `/review`
+## 4. Run `/review` — it loops on its own from here
 
 ```
 You: /review wordcount
 ```
 
-Claude checks the code against every requirement in `specs/wordcount.md`:
+`review` checks the code against every requirement in `specs/wordcount.md`, and if it finds a gap it does **not** stop and wait for you - it calls `build` itself, then re-checks, automatically:
 
 ```
-Result: NOT APPROVED
+Round 1/15
 
 Gaps found:
 1. Fails "Missing file: print an error message to stderr, exit code 1"
    - Current behavior: unhandled exception + stack trace, exit code 1 only by accident
    - Fix: catch the file-read error explicitly, print "Error: file not found" to stderr, exit(1)
 
-All other requirements pass.
+All other requirements pass. Invoking build with this correction...
+
+[build applies just the flagged fix - no unrelated changes]
+
+Round 2/15 - re-checking...
+
+Result: APPROVED - all requirements in specs/wordcount.md are met.
 ```
 
-## 5. Back to `/build` with the correction
-
-```
-You: /build wordcount
-```
-
-Claude applies just the flagged fix (catches the missing-file case cleanly) - no unrelated changes.
-
-## 6. Run `/review` again
-
-```
-You: /review wordcount
-
-Claude: Result: APPROVED - all requirements in specs/wordcount.md are met.
-```
-
-Loop `/build` <-> `/review` until you see `APPROVED`.
+You only typed `/review` once; `build` and the re-check happened automatically in between. If it isn't converging, `review` stops early (a requirement failing the same way two rounds running) or at the round cap (default 15) and reports back to you instead of looping forever.

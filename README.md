@@ -52,9 +52,9 @@ npx github:0xPuncker/my-cc-setup
 | --- | --- | --- |
 | `spec` | `/spec` | Interviews you one question at a time, writes `specs/<name>.md` |
 | `build` | `/build` | Reads the spec, implements exactly what it describes |
-| `review` | `/review` | Checks the build against the spec requirement-by-requirement, sends corrections back to `/build` |
+| `review` | `/review` | Checks the build against the spec requirement-by-requirement, then autonomously re-invokes `build` with corrections and re-checks — no manual back-and-forth |
 
-Run `/spec` to start; loop `/build` → `/review` until review approves.
+Run `/spec` to start, then `/build`, then `/review`. From there `review` loops on its own (build → check → build → check...) until it's approved or hits its round cap (default 15) — you don't need to re-run `/build`/`/review` by hand.
 
 **Full walkthrough:** See [docs/SPEC_BUILD_REVIEW_EXAMPLE.md](docs/SPEC_BUILD_REVIEW_EXAMPLE.md)
 
