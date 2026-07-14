@@ -45,7 +45,7 @@ Run the setup script from your new project directory:
 Installs three Claude Code skills implementing a spec-driven development loop, globally to `~/.claude/skills`:
 
 ```bash
-npx my-cc-setup
+npx github:0xPuncker/my-cc-setup
 ```
 
 | Skill | Command | Does |

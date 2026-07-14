@@ -5,7 +5,7 @@ Walkthrough of installing and using the `spec`, `build`, and `review` skills for
 ## 1. Install
 
 ```bash
-npx my-cc-setup
+npx github:0xPuncker/my-cc-setup
 ```
 
 This copies `spec/`, `build/`, `review/` into `~/.claude/skills`. Restart Claude Code (or start a new session) so it picks them up.
