@@ -7,7 +7,7 @@
 
 Personal template repository for consistent Claude Code configuration across projects. Includes security controls, permission management, and development guidelines.
 
-## 🚀 Quick Start
+## Quick Start
 
 **Option 1: Automated Setup (Recommended)**
 
@@ -40,22 +40,40 @@ Run the setup script from your new project directory:
 
 **Detailed instructions:** See [docs/SETUP.md](docs/SETUP.md) | **Checklist:** See [docs/CHECKLIST.md](docs/CHECKLIST.md)
 
-## 📋 What This Provides
+## Spec → Build → Review Skills (npx)
 
-### 🔒 Security by Default
+Installs three Claude Code skills implementing a spec-driven development loop, globally to `~/.claude/skills`:
+
+```bash
+npx my-cc-setup
+```
+
+| Skill | Command | Does |
+| --- | --- | --- |
+| `spec` | `/spec` | Interviews you one question at a time, writes `specs/<name>.md` |
+| `build` | `/build` | Reads the spec, implements exactly what it describes |
+| `review` | `/review` | Checks the build against the spec requirement-by-requirement, sends corrections back to `/build` |
+
+Run `/spec` to start; loop `/build` → `/review` until review approves.
+
+**Full walkthrough:** See [docs/SPEC_BUILD_REVIEW_EXAMPLE.md](docs/SPEC_BUILD_REVIEW_EXAMPLE.md)
+
+## What This Provides
+
+### Security by Default
 
 - **Protected files**: `.env*`, secrets, keys cannot be read/written
 - **Approval prompts**: Asks before destructive operations (edit, delete, git push)
 - **File access restrictions**: Automatic protection for sensitive patterns
 
-### 📝 Consistent Conventions
+### Consistent Conventions
 
 - **Semantic Versioning**: MAJOR.MINOR.PATCH versioning
 - **Git Flow**: Branching strategy (main, develop, feature/\*)
 - **Conventional Commits**: Standardized commit message format
 - **Single-author commits**: No CoAuthored commits
 
-### 🎯 Quality Guidelines
+### Quality Guidelines
 
 Based on [Andrej Karpathy's LLM coding principles](https://github.com/karpathy/llm.internals):
 
@@ -64,7 +82,7 @@ Based on [Andrej Karpathy's LLM coding principles](https://github.com/karpathy/l
 3. **Surgical Changes** - Touch only what you must
 4. **Goal-Driven Execution** - Define success criteria, verify results
 
-### ⚙️ Permission Modes
+### Permission Modes
 
 | Mode                | Behavior                                       | Best For                              |
 | ------------------- | ---------------------------------------------- | ------------------------------------- |
@@ -73,7 +91,7 @@ Based on [Andrej Karpathy's LLM coding principles](https://github.com/karpathy/l
 | `auto`              | Auto-approves most operations                  | Trusted projects, rapid prototyping   |
 | `bypassPermissions` | No prompts                                     | **Use with extreme caution**          |
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```
 my-cc-setup/
@@ -96,7 +114,7 @@ my-cc-setup/
 └── README.md                 # This file
 ```
 
-## 🎯 Core Guidelines
+## Core Guidelines
 
 ### Think Before Coding
 
@@ -123,16 +141,16 @@ my-cc-setup/
 - Loop until verified
 - Write tests that reproduce bugs
 
-## 🔐 Permission Examples
+## Permission Examples
 
-### ✅ No Prompt Needed
+### No Prompt Needed
 
 - Reading source code
 - Searching with Grep/Glob
 - Git status/log
 - Read-only file operations
 
-### ⚠️ Approval Required
+### Approval Required
 
 - Editing files (Edit/Write tools)
 - Running shell commands
@@ -140,7 +158,7 @@ my-cc-setup/
 - Installing dependencies
 - File deletion operations
 
-### 🛡️ Never Allowed
+### Never Allowed
 
 - Reading `.env` files
 - Writing to `secrets/` directories
@@ -148,7 +166,7 @@ my-cc-setup/
 - Modifying `.ssh/` directories
 - Reading `.aws/` configurations
 
-## 📖 Documentation
+## Documentation
 
 | File                                                 | Purpose                                          |
 | ---------------------------------------------------- | ------------------------------------------------ |
@@ -157,10 +175,11 @@ my-cc-setup/
 | [docs/GLOBAL_SETUP.md](docs/GLOBAL_SETUP.md)         | Global configuration guide                       |
 | [docs/PROJECT_OVERRIDE.md](docs/PROJECT_OVERRIDE.md) | Project-specific override guide                  |
 | [docs/GITHUB_ABOUT.md](docs/GITHUB_ABOUT.md)         | GitHub repository setup                          |
+| [docs/SPEC_BUILD_REVIEW_EXAMPLE.md](docs/SPEC_BUILD_REVIEW_EXAMPLE.md) | Spec -> build -> review loop walkthrough example |
 | [CLAUDE.md](CLAUDE.md)                               | Full development guidelines and conventions      |
 | [examples/](examples/)                               | Tech stack-specific templates                    |
 
-## 🛠 How to Use This Template
+## How to Use This Template
 
 ### Automated Setup (Recommended)
 
@@ -211,7 +230,7 @@ cp .gitignore.template /path/to/project/.gitignore
 
 Then edit `CLAUDE.md` to customize for your project.
 
-## 🎨 Customization Examples
+## Customization Examples
 
 ### Add Development Commands
 
@@ -265,7 +284,7 @@ src/
 ```
 
 
-## 🎓 Learn More
+## Learn More
 
 ### Key Concepts
 
@@ -280,7 +299,7 @@ src/
 - [Claude Code GitHub](https://github.com/anthropics/claude-code)
 - [Claude Code Issues](https://github.com/anthropics/claude-code/issues)
 
-## 🔍 Troubleshooting
+## Troubleshooting
 
 ### "Too many prompts"
 
@@ -298,11 +317,11 @@ src/
 - Set permission mode to `default`
 - Remove `alwaysAllowShell: true` if present
 
-## 📦 License
+## License
 
 Apache License 2.0 - Feel free to use and modify for your needs.
 
-## 🤝 Contributing
+## Contributing
 
 This is a personal template. Feel free to fork and customize for your own workflow.
 

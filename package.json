@@ -1,0 +1,16 @@
+{
+  "name": "my-cc-setup",
+  "version": "1.0.0",
+  "description": "Installs the spec -> build -> review development loop skills for Claude Code into ~/.claude/skills",
+  "license": "Apache-2.0",
+  "bin": {
+    "my-cc-setup": "bin/install.js"
+  },
+  "files": [
+    "bin",
+    "skills"
+  ],
+  "engines": {
+    "node": ">=18"
+  }
+}
