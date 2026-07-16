@@ -58,6 +58,14 @@ Run `/spec` to start, then `/build`, then `/review`. From there `review` loops o
 
 **Full walkthrough:** See [docs/SPEC_BUILD_REVIEW_EXAMPLE.md](docs/SPEC_BUILD_REVIEW_EXAMPLE.md)
 
+## Web Design Skill (npx)
+
+The same `npx github:0xPuncker/my-cc-setup` command also installs `web-design`, a standalone skill (not part of the spec/build/review loop) for building website UI in React/Next.js:
+
+| Skill | Trigger | Does |
+| --- | --- | --- |
+| `web-design` | Auto (detects website/landing page/hero section/animation work) | Clean layout checklist, 21st.dev hero section sourcing (Magic MCP or WebFetch fallback), Framer Motion animation patterns |
+
 ## What This Provides
 
 ### Security by Default
@@ -111,6 +119,11 @@ my-cc-setup/
 │   ├── CLAUDE.nodejs.md      # Node.js/Express/TypeScript example
 │   ├── CLAUDE.python.md      # Django/Python example
 │   └── CLAUDE.golang.md      # Go/Clean Architecture example
+├── skills/                   # Installable Claude Code skills (npx)
+│   ├── spec/                 # /spec - interview and write specs/<name>.md
+│   ├── build/                # /build - implement from spec
+│   ├── review/                # /review - check build against spec, loop
+│   └── web-design/           # Auto-trigger - layout, hero sections, animations
 └── README.md                 # This file
 ```
 

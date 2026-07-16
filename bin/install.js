@@ -11,14 +11,10 @@ const TARGET_DIR = path.join(os.homedir(), ".claude", "skills");
 const LOOP_ORDER = ["spec", "build", "review"];
 
 function main() {
-  const available = new Set(
-    fs
-      .readdirSync(SOURCE_DIR, { withFileTypes: true })
-      .filter((entry) => entry.isDirectory())
-      .map((entry) => entry.name)
-  );
-
-  const skillNames = LOOP_ORDER.filter((name) => available.has(name));
+  const skillNames = fs
+    .readdirSync(SOURCE_DIR, { withFileTypes: true })
+    .filter((entry) => entry.isDirectory())
+    .map((entry) => entry.name);
 
   if (skillNames.length === 0) {
     console.error("No skills found to install.");
@@ -37,7 +33,10 @@ function main() {
   }
 
   console.log("\nDone. Restart Claude Code (or start a new session) to pick up the skills.");
-  console.log(`Run: /${skillNames[0]} to start the loop.`);
+
+  if (LOOP_ORDER.every((name) => skillNames.includes(name))) {
+    console.log(`Run: /${LOOP_ORDER[0]} to start the loop.`);
+  }
 }
 
 main();
