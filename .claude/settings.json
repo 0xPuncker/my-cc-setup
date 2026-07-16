@@ -6,10 +6,6 @@
     "alwaysAllowReadOnly": true,
     "alwaysAllowShell": false
   },
-  "hooks": {
-    "preCommand": "",
-    "postCommand": ""
-  },
   "hiddenCommands": [],
   "disabledCommands": []
 }
